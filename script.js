@@ -13,7 +13,7 @@
     J: [[1, 0, 0], [1, 1, 1]],
     L: [[0, 0, 1], [1, 1, 1]]
   };
-  const GLYPHS = { I: "██", O: "██", T: "██", S: "▀▄", Z: "▄▀", J: "█▄", L: "▄█" };
+  const GLYPHS = { I: "██", O: "██", T: "██", S: "██", Z: "██", J: "██", L: "██" };
   const POINTS = [0, 100, 300, 500, 800];
 
   const boardEl = document.querySelector("#gameBoard");
