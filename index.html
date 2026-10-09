@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050b07">
+  <meta name="description" content="Responsive ASCII Tetris built with vanilla HTML, CSS, and JavaScript.">
+  <title>ASCII TETRIS // TERMINAL</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div>
+          <p class="eyebrow">PIXEL TERMINAL <span>///</span> GAME MODULE 01</p>
+          <h1>ASCII<span class="dim">_</span>TETRIS</h1>
+        </div>
+      </div>
+      <div class="top-status">
+        <button id="themeButton" class="theme-btn" aria-label="Change Theme">🎨 THEME</button>
+        <span class="live-dot"></span> SYSTEM ONLINE
+      </div>
+    </header>
+
+    <section class="game-layout" aria-label="Tetris game">
+      <section class="board-panel panel">
+        <div class="panel-heading">
+          <span><span class="prompt">&gt;</span> MAIN_GRID</span>
+          <span id="stateLabel" class="state-label">READY</span>
+        </div>
+        <div class="board-wrap">
+          <pre id="gameBoard" class="game-board" role="img" aria-label="Tetris game board">Loading grid...</pre>
+          <div id="overlay" class="overlay">
+            <p class="overlay-kicker">SYSTEM READY</p>
+            <h2 id="overlayTitle">INSERT PLAYER</h2>
+            <p id="overlayText">Start a run. Clear lines. Stay alive.</p>
+            <button id="startButton" class="primary-button">[ START GAME ]</button>
+          </div>
+        </div>
+        <div class="board-footer">
+          <span>GRID: <b>10 × 20</b></span>
+          <span>RENDER: <b>ASCII / MONO</b></span>
+          <span id="fpsLabel">ENGINE: <b>READY</b></span>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="panel stats-panel">
+          <div class="panel-heading"><span><span class="prompt">&gt;</span> TELEMETRY</span><span class="tiny-code">SYS.01</span></div>
+          <div class="stat"><span>SCORE</span><strong id="score">000000</strong></div>
+          <div class="stat"><span>HIGH SCORE</span><strong id="highScore">000000</strong></div>
+          <div class="stat-row">
+            <div class="stat compact"><span>LINES</span><strong id="lines">00</strong></div>
+            <div class="stat compact"><span>LEVEL</span><strong id="level">01</strong></div>
+          </div>
+        </section>
+
+        <section class="panel next-panel">
+          <div class="panel-heading"><span><span class="prompt">&gt;</span> NEXT_BLOCK</span><span class="tiny-code">QUEUE</span></div>
+          <pre id="nextPiece" class="next-piece" aria-label="Next Tetris piece">[  ?  ]</pre>
+        </section>
+
+        <section class="panel controls-panel">
+          <div class="panel-heading"><span><span class="prompt">&gt;</span> INPUT_MAP</span></div>
+          <div class="key-row"><kbd>←</kbd><kbd>→</kbd><span>MOVE</span></div>
+          <div class="key-row"><kbd>↑</kbd><span>ROTATE</span></div>
+          <div class="key-row"><kbd>↓</kbd><span>SOFT DROP</span></div>
+          <div class="key-row"><kbd>SPACE</kbd><span>HARD DROP</span></div>
+          <div class="key-row"><kbd>P</kbd><span>PAUSE / RESUME</span></div>
+        </section>
+
+        <div class="side-actions">
+          <button id="pauseButton" class="secondary-button" disabled>[ PAUSE ]</button>
+          <button id="restartButton" class="secondary-button">[ RESTART ]</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="mobile-controls panel" aria-label="Touch controls">
+      <div class="panel-heading"><span><span class="prompt">&gt;</span> TOUCH_INPUT</span><span class="tiny-code">MOBILE READY</span></div>
+      <div class="touch-grid">
+        <button class="touch-button rotate" data-action="rotate" aria-label="Rotate piece">ROTATE ↻</button>
+        <button class="touch-button" data-action="left" aria-label="Move left">◀ LEFT</button>
+        <button class="touch-button" data-action="down" aria-label="Soft drop">▼ DOWN</button>
+        <button class="touch-button" data-action="right" aria-label="Move right">RIGHT ▶</button>
+        <button class="touch-button drop" data-action="drop" aria-label="Hard drop">HARD DROP ⇊</button>
+      </div>
+      <p class="touch-hint">Tap controls or swipe on the grid. Swipe up to rotate; swipe down to drop faster.</p>
+    </section>
+
+    <footer class="footer">
+      <span>NO LIBRARIES. NO MERCY.</span>
+      <span>HTML <i>+</i> CSS <i>+</i> VANILLA JS</span>
+    </footer>
+  </main>
+</body>
+</html>
