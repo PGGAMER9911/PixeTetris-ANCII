@@ -13,8 +13,8 @@
   --glow: rgba(99, 255, 145, 0.4);
   --glow-soft: rgba(99, 255, 145, 0.05);
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  --mouse-x: 50%;
-  --mouse-y: 50%;
+  --mouse-x: -100px;
+  --mouse-y: -100px;
 }
 
 [data-theme="amber"] {
@@ -64,7 +64,7 @@ html { min-height: 100%; background: var(--bg); transition: background-color 0.4
 body {
   margin: 0; min-height: 100vh; color: var(--text); font-family: var(--mono);
   background:
-    radial-gradient(circle 600px at var(--mouse-x) var(--mouse-y), var(--glow-soft), transparent 80%),
+    radial-gradient(circle 28px at var(--mouse-x) var(--mouse-y), var(--glow) 0%, transparent 80%),
     linear-gradient(var(--glow-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--glow-soft) 1px, transparent 1px),
     radial-gradient(ellipse at 50% 0%, #000000 0%, var(--bg) 65%);

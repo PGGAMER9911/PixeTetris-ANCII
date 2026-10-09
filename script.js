@@ -13,7 +13,7 @@
     J: [[1, 0, 0], [1, 1, 1]],
     L: [[0, 0, 1], [1, 1, 1]]
   };
-  const GLYPHS = { I: "==", O: "[]", T: "TT", S: "SS", Z: "ZZ", J: "JJ", L: "LL" };
+  const GLYPHS = { I: "██", O: "██", T: "██", S: "▀▄", Z: "▄▀", J: "█▄", L: "▄█" };
   const POINTS = [0, 100, 300, 500, 800];
 
   const boardEl = document.querySelector("#gameBoard");
@@ -400,11 +400,12 @@
     });
   }
 
-  // Mouse hover glow logic
+  // Mouse hover glow logic (snapped to 24px grid)
   document.addEventListener("mousemove", (e) => {
-    const x = (e.clientX / window.innerWidth) * 100 + "%";
-    const y = (e.clientY / window.innerHeight) * 100 + "%";
-    document.documentElement.style.setProperty("--mouse-x", x);
-    document.documentElement.style.setProperty("--mouse-y", y);
+    const gridSize = 24;
+    const qX = Math.floor(e.clientX / gridSize) * gridSize + (gridSize / 2);
+    const qY = Math.floor(e.clientY / gridSize) * gridSize + (gridSize / 2);
+    document.documentElement.style.setProperty("--mouse-x", qX + "px");
+    document.documentElement.style.setProperty("--mouse-y", qY + "px");
   });
 })();
